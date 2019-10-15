@@ -2,6 +2,7 @@ package solution
 
 import "fmt"
 
+const adjustIndexNumber = 1
 const numberOneBinaryString = "1"
 
 // Solution return maxGap of a number in a binary representation
@@ -35,7 +36,7 @@ func findNumberOneBinaryStringPositions(binary string) (numberOneBinaryStringPos
 
 func findMaxGap(positionsSlice []int, positionsSliceLength int) (maxGap int) {
 	for i := 1; i < positionsSliceLength; i++ {
-		max := (positionsSlice[i] - positionsSlice[i-1]) - 1
+		max := (positionsSlice[i] - positionsSlice[i-1]) - adjustIndexNumber
 
 		if max > maxGap {
 			maxGap = max
