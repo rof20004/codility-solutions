@@ -6,11 +6,10 @@ import (
 )
 
 var number = 1041
+var binary = fmt.Sprintf("%b", number)
+var expected = 5
 
 func TestSolution(t *testing.T) {
-	binary := fmt.Sprintf("%b", number)
-	expected := 5
-
 	got := Solution(number)
 
 	if got != expected {
