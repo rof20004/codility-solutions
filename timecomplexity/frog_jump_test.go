@@ -2,19 +2,19 @@ package timecomplexity
 
 import "testing"
 
-var x, y, d = 10, 85, 30
-var expected = 3
+var xTimeComplexity, yTimeComplexity, dTimeComplexity = 10, 85, 30
+var expectedTimeComplexity = 3
 
 func TestTimeComplexity(t *testing.T) {
-	got := TimeComplexity(x, y, d)
+	got := TimeComplexity(xTimeComplexity, yTimeComplexity, dTimeComplexity)
 
-	if got != expected {
-		t.Errorf("expected %d got %d\n", expected, got)
+	if got != expectedTimeComplexity {
+		t.Errorf("expected %d got %d\n", expectedTimeComplexity, got)
 	}
 }
 
 func BenchmarkTimeComplexity(b *testing.B) {
 	for n := 0; n < b.N; n++ {
-		TimeComplexity(x, y, d)
+		TimeComplexity(xTimeComplexity, yTimeComplexity, dTimeComplexity)
 	}
 }
