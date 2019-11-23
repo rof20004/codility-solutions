@@ -1,7 +1,7 @@
 package solution
 
-// Solution find odd occurrences of a number in array
-func Solution(A []int) int {
+// OddOccurrencesInArray find odd occurrences of a number in array
+func OddOccurrencesInArray(A []int) int {
 	occurrences := make(map[int]int)
 
 	for _, value := range A {

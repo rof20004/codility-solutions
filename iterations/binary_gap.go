@@ -2,45 +2,25 @@ package solution
 
 import "fmt"
 
-const adjustIndexNumber = 1
-const numberOneBinaryString = "1"
+// BinaryGap return maxGap of a number in a binary representation
+func BinaryGap(N int) int {
+	binary := fmt.Sprintf("%b", N)
 
-// Solution return maxGap of a number in a binary representation
-func Solution(N int) int {
-	binary := convertIntToBinaryString(N)
-	maxGap := getMaxGapBinaryString(binary)
-
-	return maxGap
-}
-
-func convertIntToBinaryString(N int) string {
-	return fmt.Sprintf("%b", N)
-}
-
-func getMaxGapBinaryString(binary string) (gap int) {
-	var numberOneBinaryStringPositions = findNumberOneBinaryStringPositions(binary)
-
-	gap = findMaxGap(numberOneBinaryStringPositions, len(numberOneBinaryStringPositions))
-
-	return gap
-}
-
-func findNumberOneBinaryStringPositions(binary string) (numberOneBinaryStringPositions []int) {
+	var occurrencesOne = make([]int, 0)
 	for position, runeValue := range binary {
-		if string(runeValue) == numberOneBinaryString {
-			numberOneBinaryStringPositions = append(numberOneBinaryStringPositions, position)
+		if string(runeValue) == "1" {
+			occurrencesOne = append(occurrencesOne, position)
 		}
 	}
-	return
-}
 
-func findMaxGap(positionsSlice []int, positionsSliceLength int) (maxGap int) {
-	for i := 1; i < positionsSliceLength; i++ {
-		max := (positionsSlice[i] - positionsSlice[i-1]) - adjustIndexNumber
+	var maxGap int
+	for i := 1; i < len(occurrencesOne); i++ {
+		max := (occurrencesOne[i] - occurrencesOne[i-1]) - 1
 
 		if max > maxGap {
 			maxGap = max
 		}
 	}
-	return
+
+	return maxGap
 }

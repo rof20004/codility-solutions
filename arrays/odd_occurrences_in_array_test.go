@@ -2,19 +2,19 @@ package solution
 
 import "testing"
 
-var array = []int{9, 3, 9, 3, 9, 7, 9}
-var expected = 7
+var arrayOddOccurrencesInArray = []int{9, 3, 9, 3, 9, 7, 9}
+var expectedOddOccurrencesInArray = 7
 
-func TestSolution(t *testing.T) {
-	got := Solution(array)
+func TestOddOccurrencesInArray(t *testing.T) {
+	gotOddOccurrencesInArray := OddOccurrencesInArray(arrayOddOccurrencesInArray)
 
-	if got != expected {
-		t.Errorf("Array is %v, found odd occurrences is %d expected %d", array, got, expected)
+	if gotOddOccurrencesInArray != expectedOddOccurrencesInArray {
+		t.Errorf("Array is %v, found odd occurrences is %d expected %d", arrayOddOccurrencesInArray, gotOddOccurrencesInArray, expectedOddOccurrencesInArray)
 	}
 }
 
-func BenchmarkSolution(b *testing.B) {
+func BenchmarkOddOccurrencesInArray(b *testing.B) {
 	for n := 0; n < b.N; n++ {
-		Solution(array)
+		OddOccurrencesInArray(arrayOddOccurrencesInArray)
 	}
 }
