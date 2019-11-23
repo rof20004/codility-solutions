@@ -1,7 +1,5 @@
 package solution
 
-const howManyTimesCanAppear = 1
-
 // Solution find odd occurrences of a number in array
 func Solution(A []int) int {
 	occurrences := make(map[int]int)
