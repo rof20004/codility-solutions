@@ -2,19 +2,19 @@ package timecomplexity
 
 import "testing"
 
-var xTimeComplexity, yTimeComplexity, dTimeComplexity = 10, 85, 30
-var expectedTimeComplexity = 3
+var xFrogJump, yFrogJump, dFrogJump = 10, 85, 30
+var eFrogJump = 3
 
-func TestTimeComplexity(t *testing.T) {
-	got := TimeComplexity(xTimeComplexity, yTimeComplexity, dTimeComplexity)
+func TestFrogJump(t *testing.T) {
+	got := FrogJump(xFrogJump, yFrogJump, dFrogJump)
 
-	if got != expectedTimeComplexity {
-		t.Errorf("expected %d got %d\n", expectedTimeComplexity, got)
+	if got != eFrogJump {
+		t.Errorf("expected %d got %d\n", eFrogJump, got)
 	}
 }
 
-func BenchmarkTimeComplexity(b *testing.B) {
+func BenchmarkFrogJump(b *testing.B) {
 	for n := 0; n < b.N; n++ {
-		TimeComplexity(xTimeComplexity, yTimeComplexity, dTimeComplexity)
+		FrogJump(xFrogJump, yFrogJump, dFrogJump)
 	}
 }

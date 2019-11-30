@@ -1,7 +1,7 @@
 package timecomplexity
 
-// TimeComplexity calculates frog jumps to Y coordinates
-func TimeComplexity(X, Y, D int) int {
+// FrogJump calculates frog jumps to Y coordinates
+func FrogJump(X, Y, D int) int {
 	distance := Y - X
 
 	if distance % D == 0 {
